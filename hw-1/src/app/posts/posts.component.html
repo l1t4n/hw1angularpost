@@ -1,0 +1,9 @@
+<section class="post-generator">
+    <input (change)="readValue(newLabelValue)" placeholder="Label" type="text" [value]="returnValue(labelValue)" #newLabelValue>
+    <input (change)="readValue(newDescValue)" placeholder="Description" type="text" [value]="returnValue(descValue)" #newDescValue>
+    <button (click)="postService.addPost({label: newLabelValue.value, desc: newDescValue.value})">Add Post</button>
+</section>
+<section class="post-wrapper" *ngFor="let post of posts">
+    <h2>{{post.label}}</h2>
+    <h5>{{post.desc}}</h5>
+</section>
