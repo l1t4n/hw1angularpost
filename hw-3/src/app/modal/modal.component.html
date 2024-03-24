@@ -1,0 +1,6 @@
+<form (submit)="signUp(authForm)" #authForm="ngForm" class="form">
+    <input [(ngModel)]="login" placeholder="Enter login" type="text" name="login" autocomplete="false">
+    <input [(ngModel)]="password" placeholder="Enter password" type="password" name="password" autocomplete="false">
+    <button type="submit">sign in</button>
+    <section class="">dont have an account? <a href="#"><div>register</div></a></section>
+</form>
