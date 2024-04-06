@@ -1,0 +1,11 @@
+<section>
+    <div *ngFor="let pizza of pizzas">
+        <mat-card class="card">
+            <mat-card-header>
+                <mat-card-title>Label:{{pizza.label}}</mat-card-title>
+                <mat-card-subtitle>Price:{{pizza.price}}</mat-card-subtitle>
+            </mat-card-header>
+        <button class="btn" mat-flat-button color="accent">Buy!</button>
+        </mat-card>
+    </div>
+</section>

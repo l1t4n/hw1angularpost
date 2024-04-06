@@ -1,0 +1,17 @@
+<header>
+  <nav>
+    <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+      <mat-button-toggle routerLink="{{category.path}}" *ngFor="let category of categories" value="{{category.title}}">
+        <a class="link">{{category.title}}</a>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </nav>
+</header>
+
+<router-outlet class="router-outlet">
+
+</router-outlet>
+
+<footer>
+  <h3>All rights are mine</h3>
+</footer>
