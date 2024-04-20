@@ -1,0 +1,31 @@
+<mat-spinner
+  color="accent"
+  class="spinner"
+  mode="indeterminate"
+  *ngIf="getVisibility()"
+></mat-spinner>
+
+<section class="profile" *ngIf="!getVisibility()">
+  <section class="user">
+    <img src="{{ getImageUrl() }}" alt="User picture" class="image" />
+
+    <div class="info">
+      <div class="field">Name</div>
+      <div class="field">{{ getUser().name }}</div>
+      <div class="field">Age</div>
+      <div class="field">{{ getUser().age }}</div>
+      <div class="field">Email</div>
+      <div class="field">{{ getUser().email }}</div>
+      <div class="field">Password</div>
+      <div class="field">{{ getUser().password }}</div>
+    </div>
+  </section>
+
+  <section class="controls">
+    <button mat-raised-button color="accent" (click)="showModal()">
+      Edit user info
+    </button>
+  </section>
+</section>
+
+<app-edit-user-modal-window></app-edit-user-modal-window>
