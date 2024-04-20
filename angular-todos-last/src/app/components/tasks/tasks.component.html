@@ -1,0 +1,36 @@
+<div class="tasks">
+  <div class="task" *ngFor="let task of getTasks() | async">
+    <div class="task-info">
+      <p class="{{ task.status === 'Done' ? 'title line' : 'title' }}">
+        {{ task.title }}
+      </p>
+
+      <div class="controls">
+        <button mat-raised-button (click)="edit(task)">
+          Edit
+        </button>
+
+        <button mat-raised-button color="warn" (click)="remove(task.id)">
+          Delete
+        </button>
+      </div>
+    </div>
+
+    <div class="task-footer">
+      <p class="status">Status: {{ task.status }}</p>
+      <p class="date">{{ task.date.toLocaleString("uk-UA") }}</p>
+    </div>
+  </div>
+
+  <mat-paginator
+    [length]="getLength()"
+    [pageSize]="getPageSize()"
+    [pageSizeOptions]="[3, 5, 10]"
+    *ngIf="getLength() > getPageSize()"
+    (page)="change($event)"
+    aria-label="Select page"
+  >
+  </mat-paginator>
+</div>
+
+<app-edit-form></app-edit-form>

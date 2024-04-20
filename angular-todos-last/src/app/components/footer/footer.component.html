@@ -1,0 +1,16 @@
+<footer class="footer">
+  <form #form="ngForm" (submit)="add(form.value)" class="form">
+    <mat-form-field class="field">
+      <mat-label>Title</mat-label>
+      <input
+        name="title"
+        ngModel
+        matInput
+        placeholder="Enter a task..."
+        value=""
+      />
+    </mat-form-field>
+
+    <button mat-flat-button color="warn">Add task</button>
+  </form>
+</footer>
